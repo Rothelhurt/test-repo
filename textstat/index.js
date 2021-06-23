@@ -10,6 +10,19 @@
 function onStatisticsClicked(event) {
     //TODO: Implement this function
     console.log('onStatisticsClicked called');
+    const text = document.getElementById("text").value
+    const words = text.split(" ").length
+    const char_count = document.getElementById("valCharCount")
+    const space_count = document.getElementById("valSpacesCount")
+    const words_count = document.getElementById("valWordsCount")
+    const vowels_count = document.getElementById("valVowelsCount")
+    const consonants_count = document.getElementById("valConsonantsCount")
+    char_count.value = text.length;
+    space_count.value = words - 1
+    words_count.value = text.split(" ").length
+    vowels_count.value = text.toLowerCase().match(/[aeiou]/g).length
+    consonants_count.value = text.length - text.toLowerCase().match(/[aeiou]/g).length - words - 1
+
 }
 
 /**
@@ -20,6 +33,10 @@ function onStatisticsClicked(event) {
 function onRemoveWordsClicked(event) {
     //TODO: Implement this function
     console.log('onRemoveWordsClicked called');
+    const odd_words_input = document.getElementById("valOddWords")
+    const text_list = document.getElementById("text").value.split(" "),
+    odd_words_list = text_list.filter(function(el, index) {return index % 2 === 0;}).join(' ');
+    odd_words_input.value = odd_words_list
 }
 
 
