@@ -50,7 +50,9 @@ function init() {
      */
     function getCoordinates(time) {
         // TODO: implement body of this function
-        return [0.0, 1.0];
+        let x = Math.cos(2 * Math.PI * time)
+        let y = Math.sin(2 * Math.PI * time)
+        return [x, y];
     }
 
     /**
@@ -58,7 +60,7 @@ function init() {
      */
     function update() {
         const time = Date.now() / 1000;
-        coordinates = getCoordinates(time);
+        let coordinates = getCoordinates(time);
         drawing.redraw(coordinates);
     }
 
